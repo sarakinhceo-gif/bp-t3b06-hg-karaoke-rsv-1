@@ -1,387 +1,92 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <title>화곡 가라오케 예약 블로그 | 프리미엄 노래방 선택 가이드</title>
-    <meta name="description" content="화곡동 가라오케 예약, 전문가가 분석한 선택 기준. 음향 시스템, 곡 수, 서비스 품질 비교 데이터와 예약 팁 제공. 010-6279-0862">
-    <meta name="keywords" content="화곡 가라오케, 화곡동 노래방, 가라오케 예약, 프리미엄 노래방, 화곡 가라오케 추천, 가라오케 블로그">
-    <link rel="canonical" href="https://t3b06-hg-karaoke-rsv-1.vercel.app/blog">
-    <meta property="og:title" content="화곡 가라오케 예약 | 프리미엄 노래방 시스템 블로그">
-    <meta property="og:description" content="화곡동 가라오케 예약, 데이터 기반 선택 가이드. 24시간 매니징, 최신 음향, 1500곡 라이브러리">
-    <style>
-        /* ===== STREET BRUTALIST RESET ===== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: #f5f0eb;
-            color: #1a1a1a;
-            line-height: 1.5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ===== VARIABLES ===== */
-        :root {
-            --primary: #c0392b;
-            --accent: #2c3e50;
-            --bg-dark: #1a1a1a;
-            --bg-light: #f5f0eb;
-            --text-dark: #1a1a1a;
-            --text-light: #f5f0eb;
-            --border-thick: 4px solid #1a1a1a;
-            --shadow-hard: 6px 6px 0 rgba(0,0,0,0.2);
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ===== HEADER / NAV ===== */
-        .header {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            border-bottom: var(--border-thick);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-        }
-
-        .logo a {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            text-decoration: none;
-            border: 2px solid var(--primary);
-            padding: 4px 12px;
-            transition: 0.2s;
-        }
-
-        .logo a:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .nav {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            border-bottom-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* hamburger menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            background: none;
-            border: none;
-            padding: 8px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: var(--text-light);
-            transition: 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-dark);
-                padding: 20px;
-                border-bottom: var(--border-thick);
-                gap: 15px;
-            }
-            .nav.open {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        /* ===== HERO SECTION (블로그 헤더) ===== */
-        .hero {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 60px 0 40px;
-            border-bottom: var(--border-thick);
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-bottom: 16px;
-            text-shadow: 3px 3px 0 var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        .main {
-            flex: 1;
-            padding: 40px 0;
-        }
-
-        .blog-post {
-            background: #fff;
-            border: var(--border-thick);
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-hard);
-        }
-
-        .blog-post .post-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: #666;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 12px;
-        }
-
-        .blog-post h2 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .blog-post p {
-            margin-bottom: 16px;
-            font-size: 1.05rem;
-        }
-
-        .blog-post blockquote {
-            border-left: 6px solid var(--primary);
-            padding: 12px 20px;
-            margin: 24px 0;
-            background: #f9f5f0;
-            font-style: italic;
-            font-weight: bold;
-        }
-
-        .blog-post ul, .blog-post ol {
-            margin: 16px 0 16px 30px;
-        }
-
-        .blog-post li {
-            margin-bottom: 8px;
-        }
-
-        .blog-post .highlight-box {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 20px;
-            border: var(--border-thick);
-            margin: 24px 0;
-        }
-
-        /* ===== FAQ ===== */
-        .faq {
-            background: #fff;
-            border: var(--border-thick);
-            padding: 30px;
-            box-shadow: var(--shadow-hard);
-        }
-
-        .faq h3 {
-            font-size: 1.6rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .faq-item {
-            border-bottom: 2px solid #ddd;
-            padding: 16px 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-item h4 {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: #333;
-        }
-
-        /* ===== CTA ===== */
-        .cta {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .cta a {
-            display: inline-block;
-            background: var(--primary);
-            color: #fff;
-            padding: 16px 48px;
-            font-weight: 900;
-            font-size: 1.2rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: var(--border-thick);
-            box-shadow: var(--shadow-hard);
-            transition: 0.2s;
-        }
-
-        .cta a:hover {
-            background: #a93226;
-            transform: translate(2px, 2px);
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 30px 0;
-            border-top: var(--border-thick);
-            text-align: center;
-            margin-top: auto;
-        }
-
-        .footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* ===== RESPONSIVE 768 ===== */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .blog-post { padding: 20px; }
-            .blog-post h2 { font-size: 1.5rem; }
-            .faq { padding: 20px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>화곡 가라오케 예약 – 블로그 가이드</title>
+  <meta name="description" content="화곡 가라오케 예약을 위한 블로그 글. 인원·시간·목적 별 선택 포인트와 예약 전 체크리스트를 상세히 안내합니다.">
+  <meta name="keywords" content="화곡 가라오케, 가라오케 예약, 화곡 노래방, 가라오케 이용 팁, 화곡 노래방 블로그">
+  <link rel="canonical" href="https://hwagok-info-choice.link-hub.org/blog.html">
+  <meta property="og:title" content="화곡 가라오케 예약 – 블로그 가이드">
+  <meta property="og:description" content="화곡 가라오케 예약을 위한 블로그 글. 인원·시간·목적 별 선택 포인트와 예약 전 체크리스트를 상세히 안내합니다.">
+  <meta property="og:url" content="https://hwagok-info-choice.link-hub.org/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hwagok-info-choice.link-hub.org/assets/og-image.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="header">
+    <nav class="nav-present">
+      <ul>
+        <li><a href="/index.html">홈</a></li>
+        <li><a href="/guide.html">가이드</a></li>
+        <li><a href="/blog.html">블로그</a></li>
+        <li><a href="/contact.html">문의</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/">화곡KTV</a>
-            </div>
-            <nav class="nav" id="mainNav">
-                <a href="/">홈</a>
-                <a href="/about">소개</a>
-                <a href="/blog" class="active">블로그</a>
-                <a href="/reservation">예약</a>
-                <a href="/contact">문의</a>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>화곡 가라오케 예약 가이드</h1>
-            <p>데이터로 입증된 프리미엄 노래방 선택 기준 &middot; 2025 업계 전문가 분석</p>
-        </div>
+  <main class="n-item-chx0">
+    <!-- Hero Section -->
+    <section class="m-txt-fr4n">
+      <h1>화곡 가라오케, 언제·어디서·어떻게 예약할까?</h1>
+      <p>친구와 직장 동료, 혹은 가족 모임까지. 화곡에선 다양한 규모와 목적에 맞는 가라오케가 존재합니다. 하지만 “가라오케 예약”이라는 단어만 듣고는 어디서 시작해야 할지 막막하곤 하지요. 이 블로그에서는 밤거리 지도(Night Transit Map) 컨셉을 빌려, 상황별로 맞춤형 선택 포인트와 예약 전 체크리스트를 풀어드립니다.</p>
+      <p>전문가가 아니어도 손쉽게 따라 할 수 있도록, 실제 현장에서 흔히 겪는 고민을 기준으로 구분했습니다. 이제 ‘인원 규모·이용 시간·목적’만 정하면, 최적의 가라오케를 찾는 일은 순식간에 해결됩니다.</p>
     </section>
 
-    <!-- MAIN -->
-    <main class="main">
-        <div class="container">
+    <!-- 인원 규모에 따른 선택 -->
+    <section class="m-txt-fr4n">
+      <h2>인원 규모별 가라오케 선택 포인트</h2>
+      <p>소규모(2~4명) 모임은 방음과 프라이버시가 중요한 요소입니다. 화곡에서는 방 안에 별도 파티션이 있는 ‘프라이빗 룸’을 제공하는 곳이 많아, 주변 소음에 방해받지 않고 노래를 즐길 수 있습니다. 이런 룸은 보통 30분당 5,000~8,000원 수준이며, 최소 이용 시간이 짧아 부담이 적습니다.</p>
+      <p>중규모(5~10명) 팀 회식이나 동아리 활동이라면, ‘대형 룸’ 혹은 ‘파티룸’이 적합합니다. 대형 룸은 기본 음향 설비와 대형 스크린이 구비돼 있어, 다 같이 노래를 부르며 분위기를 끌어올리기 좋습니다. 이때는 1시간 기준 20,000~35,000원을 예상하고, 사전 예약 시 최소 인원 조건을 확인하는 것이 좋습니다.</p>
+      <p>대규모(10명 이상) 이벤트나 기업 파티를 계획한다면, ‘전용 전시실’이나 ‘다목적 홀’ 같은 공간을 찾아보세요. 이 공간은 별도 음향 시스템과 조명, 심지어 무대 설비까지 제공하는 경우가 있어, 공연 느낌을 살릴 수 있습니다. 가격은 시간당 50,000원 이상이 될 수 있지만, 대인원 할인 정책을 적용받을 수 있는지 사전에 문의해 보세요.</p>
+    </section>
 
-            <!-- 블로그 포스트 -->
-            <article class="blog-post">
-                <div class="post-meta">
-                    <span>2025-06-18</span>
-                    <span>|</span>
-                    <span>김진석 &middot; 가라오케 산업 분석가</span>
-                    <span>|</span>
-                    <span>조회 12,483</span>
-                </div>
+    <!-- 이용 시간에 따른 체크리스트 -->
+    <section class="m-txt-fr4n">
+      <h2>이용 시간·시점 별 예약 팁</h2>
+      <p>주말 저녁은 가라오케 이용 수요가 가장 높은 시점입니다. 이때는 최소 2시간 예약이 일반적이며, 조기 예약 할인이나 ‘피크 타임 전용’ 프로모션을 제공하는 곳도 있습니다. 사전에 웹사이트에서 ‘조기 예약 할인’ 배너를 확인하고, 가능한 한 앞서 예약을 진행하면 비용을 절감할 수 있습니다.</p>
+      <p>평일 오후 2시~5시 사이에는 ‘비수기’라 불리는 시간대가 형성됩니다. 이때는 1시간 단위로 이용 가능하고, 가격도 30~40% 할인되는 경우가 많습니다. 특히 회사 회식이나 동아리 연습을 계획한다면, 이 시간대를 활용해 예산을 절감하는 것이 현명합니다.</p>
+      <p>새벽 시간(자정~오전 2시)에는 ‘심야 플레이트’라는 특수 요금제와 함께 간단한 안주 세트를 제공하는 가라오케가 있습니다. 밤늦게까지 노래를 부르고 싶은 경우, 심야 플레이트를 선택하면 1시간당 7,000원 수준으로 저렴하게 이용할 수 있습니다.</p>
+    </section>
 
-                <h2>화곡동 가라오케 예약, 왜 프리미엄 업소를 선택해야 하는가?</h2>
+    <!-- 목적에 맞는 시설 선택 -->
+    <section class="m-txt-fr4n">
+      <h2>목적별 가라오케 시설 활용법</h2>
+      <p>‘생일 파티’라면, 케이크와 풍선, 그리고 사진 촬영 공간이 있는 ‘파티 전용 룸’이 필요합니다. 화곡 내 몇몇 가라오케는 기본 제공 서비스에 생일 파티 패키지를 포함하고 있어, 별도 주문 없이도 꾸밀 수 있습니다. 예약 시 ‘생일 파티 옵션’ 여부를 체크하고, 추가 비용이 발생하는지 확인하세요.</p>
+      <p>‘연습·연주’를 목표로 한다면, ‘음향 최적화’가 된 ‘연습실’이 중요합니다. 음향 설비가 고품질이며, 마이크와 스피커 배치가 체계적인 곳을 찾으세요. 일부 가라오케는 ‘악기 대여’ 서비스를 제공해, 직접 악기를 연주하면서 노래를 부를 수 있는 환경을 제공합니다.</p>
+      <p>‘기업 워크숍’이나 ‘팀 빌딩’ 목적이라면, 노래뿐 아니라 회의용 프로젝터와 화상 회의 시스템을 겸비한 ‘다목적 룸’이 유리합니다. 이런 공간은 회의와 레크리에이션을 원활히 전환할 수 있어, 효율적인 진행이 가능합니다. 예약 전 사전 방문을 통해 장비 호환성을 확인하는 것이 좋습니다.</p>
+    </section>
 
-                <p>서울 화곡동 지역에는 60여 개의 가라오케 업소가 영업 중입니다(2025년 1분기 기준, 화곡동 상업등록 데이터). 그러나 이 중 <strong>최신 음향 시스템과 전문 매니징을 갖춘 업소는 12%에 불과</strong>합니다. 단순한 '노래방'이 아닌, 전체 경험의 질을 결정하는 요소를 데이터로 분석합니다.</p>
+    <!-- 예약 전 최종 체크리스트 -->
+    <section class="m-txt-fr4n">
+      <h2>예약 전 꼭 확인해야 할 7가지 체크리스트</h2>
+      <p>1) <strong>예약 가능 인원</strong> – 최소·최대 인원 제한이 있는지 확인합니다.<br>
+         2) <strong>시간제한 및 연장 정책</strong> – 기본 이용시간 이후 연장 요금과 절차를 파악합니다.</p>
+      <p>3) <strong>주류·음료 판매 여부</strong> – 주류를 제공하는 방과 비제공 방을 구분해, 필요 시 별도 주문을 준비합니다.<br>
+         4) <strong>음식·안주 옵션</strong> – 사전 주문이 가능한 안주 메뉴와 가격대를 확인합니다.</p>
+      <p>5) <strong>주차 편의성</strong> – 가라오케 건물 내 주차장 유무와 요금을 체크합니다.<br>
+         6) <strong>취소·환불 정책</strong> – 예약 변경 시 발생하는 비용과 절차를 미리 알아둡니다.</p>
+      <p>7) <strong>특별 서비스</strong> – 생일 파티, 심야 플레이트, 음향 최적화 등 추가 옵션이 있는지 확인하고, 필요 시 사전 요청합니다.</p>
+    </section>
 
-                <h3>1. 음향 시스템: 객관적 지표 비교</h3>
-                <p>저희가 2025년 4월 화곡동 23개 주요 업소를 방문 측정한 결과, 프리미엄 업소의 평균 스피커 출력은 1,200W, 주파수 응답 범위는 20Hz~20kHz로 일반 업소(평균 450W, 50Hz~16kHz) 대비 2.7배 높은 성능을 기록했습니다. <strong>화곡 가라오케 예약 시, 반드시 시스템 사양을 문의하십시오.</strong></p>
+    <!-- FAQ -->
+    <section class="m-txt-fr4n">
+      <h2>자주 묻는 질문</h2>
+      <p><strong>Q1. 예약 시 선불 결제가 필수인가요?</strong><br>
+         대부분의 가라오케는 전화나 온라인 예약 시 카드 결제(선불)를 요구합니다. 현장 결제도 가능하지만, 인기 시간대는 사전 결제가 권장됩니다.</p>
+      <p><strong>Q2. 최소 이용 시간은 얼마나 되나요?</strong><br>
+         소규모 방은 30분, 대형 방은 1시간이 최소 기준이며, 일부 심야 플레이트는 1시간 단위로 이용이 가능합니다.</p>
+      <p><strong>Q3. 노래목록 업데이트는 어떻게 확인하나요?</strong><br>
+         최신 노래는 대부분 앱 혹은 웹 페이지에서 실시간 업데이트되며, 직접 기기에서 검색해볼 수 있습니다. 특정 곡이 없는 경우, 직원에게 요청하면 즉시 업데이트가 가능한 경우도 있습니다.</p>
+    </section>
 
-                <blockquote>
-                    “청음 테스트 결과, 1500곡 이상 라이브러리를 보유한 업소의 재방문율이 73%로, 500곡 미만 업소(34%)보다 2.1배 높았습니다.” – 2025 한국 가라오케 소비자 만족도 조사
-                </blockquote>
+    <div class="m-btn-1kyj">
+      <a href="https://hwagok-info-choice.link-hub.org/reserve" class="n-ico-wx39">가라오케 바로 예약하기</a>
+    </div>
+  </main>
 
-                <h3>2. 24시간 매니징의 가치</h3>
-                <p>화곡동은 자정 이후에도 유동 인구가 많은 지역입니다. 저희 데이터에 따르면, <strong>심야 시간대(00시~06시) 예약 건수는 전체의 38%</strong>를 차지합니다. 24시간 전문 매니저가 상주하는 업소는 긴급 대응
+  <footer class="footer">
+    <p>© 2026 화곡 가라오케 정보센터. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
