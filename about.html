@@ -1,137 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <title>화곡 가라오케 정보 | 프리미엄 노래방 시스템 사양 및 운영 안내</title>
-    <meta name="description" content="화곡동 최상위 가라오케 시스템 사양, 24시간 전문 매니저 운영, 1500곡 이상 라이브러리, 최신 음향 장비 상세 정보. 객관적 데이터 기반 시설 소개. 전화 예약 010-6279-0862">
-    <meta name="keywords" content="화곡 가라오케 정보, 화곡동 노래방 시스템, 가라오케 사양, 24시 가라오케 운영, 프리미엄 음향, 화곡동 가라오케 시설">
-    <link rel="canonical" href="https://hwagok-info-choice.link-hub.org/about.html">
-    <meta property="og:title" content="화곡 가라오케 정보 | 프리미엄 노래방 시스템 사양 및 운영 안내">
-    <meta property="og:description" content="화곡동 최상위 가라오케 시스템 사양, 24시간 전문 매니저 운영, 1500곡 이상 라이브러리, 최신 음향 장비 상세 정보. 객관적 데이터 기반 시설 소개. 전화 예약 010-6279-0862">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hwagok-info-choice.link-hub.org/about.html">
-    <meta property="og:image" content="https://t3b06-hg-karaoke-rsv-1.vercel.app/og-info.jpg">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="화곡 가라오케 예약">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23d4d4d4'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%231a1a1a'>🎤</text></svg>">
-    <style>
-        /* Brutalist Avantgarde — kr-raw-concrete */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', 'Noto Sans KR', system-ui, -apple-system, sans-serif; background: #e6e0d8; color: #1a1a1a; line-height: 1.5; }
-        .grid-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
-        .header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: #f5f0ea; border-bottom: 4px solid #1a1a1a; margin-bottom: 0; }
-        .nav-list { display: flex; list-style: none; gap: 32px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-list a { text-decoration: none; color: #1a1a1a; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
-        .nav-list a:hover { border-bottom-color: #c0392b; }
-        .hamburger { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; }
-        .hero { grid-column: 1 / -1; padding: 60px 24px; background: #1a1a1a; color: #f5f0ea; text-align: center; margin-bottom: 20px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; text-transform: uppercase; letter-spacing: -2px; margin-bottom: 16px; }
-        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto 24px; }
-        .btn-cta { display: inline-block; padding: 16px 48px; background: #c0392b; color: #f5f0ea; font-weight: 700; font-size: 1.1rem; text-decoration: none; border: none; text-transform: uppercase; letter-spacing: 2px; transition: background 0.2s; }
-        .btn-cta:hover { background: #a93226; }
-        .section-title { grid-column: 1 / -1; font-size: 2rem; font-weight: 700; letter-spacing: -1px; border-bottom: 4px solid #1a1a1a; padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        .card { background: #f5f0ea; border: 2px solid #1a1a1a; padding: 24px; grid-column: span 4; display: flex; flex-direction: column; }
-        .card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
-        .card p { font-size: 0.95rem; color: #2c2c2c; }
-        .faq-item { grid-column: 1 / -1; padding: 20px 0; border-bottom: 1px solid #3a3a3a; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; cursor: default; }
-        .faq-answer { font-size: 0.95rem; color: #2c2c2c; }
-        .footer { grid-column: 1 / -1; padding: 32px 24px; background: #1a1a1a; color: #f5f0ea; text-align: center; margin-top: 40px; font-size: 0.85rem; }
-        .footer a { color: #c0392b; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) {
-            .grid-container { padding: 12px; gap: 12px; }
-            .header { padding: 12px 16px; }
-            .nav-list { display: none; flex-direction: column; background: #f5f0ea; position: absolute; top: 68px; left: 0; width: 100%; padding: 16px; border-bottom: 4px solid #1a1a1a; }
-            .nav-list.active { display: flex; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2rem; }
-            .card { grid-column: 1 / -1; }
-            .section-title { font-size: 1.6rem; }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <title>화곡 가라오케 정보 | 프리미엄 노래방 시스템 사양 및 운영 안내</title>
+ <meta name="description" content="화곡동 최상위 가라오케 시스템 사양, 24시간 전문 매니저 운영, 1500곡 이상 라이브러리, 최신 음향 장비 상세 정보. 객관적 데이터 기반 시설 소개.">
+ <meta name="keywords" content="화곡 가라오케 정보, 화곡동 노래방 시스템, 가라오케 사양, 24시 가라오케 운영, 프리미엄 음향, 화곡동 가라오케 시설">
+ <link rel="canonical" href="https://hwagok-info-choice.link-hub.org/about.html">
+ <meta property="og:title" content="화곡 가라오케 정보 | 프리미엄 노래방 시스템 사양 및 운영 안내">
+ <meta property="og:description" content="화곡동 최상위 가라오케 시스템 사양, 24시간 전문 매니저 운영, 1500곡 이상 라이브러리, 최신 음향 장비 상세 정보. 객관적 데이터 기반 시설 소개.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://hwagok-info-choice.link-hub.org/about.html">
+ <meta property="og:image" content="https://t3b06-hg-karaoke-rsv-1.vercel.app/og-info.jpg">
+ <meta property="og:locale" content="ko_KR">
+ <meta property="og:site_name" content="화곡 가라오케 예약">
+ <meta name="robots" content="index, follow">
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23d4d4d4'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%231a1a1a'>🎤</text></svg>">
+ <style>
+ /* Brutalist Avantgarde — kr-raw-concrete */
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ body { font-family: 'Inter', 'Noto Sans KR', system-ui, -apple-system, sans-serif; background: #e6e0d8; color: #1a1a1a; line-height: 1.5; }
+ .grid-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+ .header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: #f5f0ea; border-bottom: 4px solid #1a1a1a; margin-bottom: 0; }
+ .nav-list { display: flex; list-style: none; gap: 32px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+ .nav-list a { text-decoration: none; color: #1a1a1a; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+ .nav-list a:hover { border-bottom-color: #c0392b; }
+ .hamburger { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; }
+ .hero { grid-column: 1 / -1; padding: 60px 24px; background: #1a1a1a; color: #f5f0ea; text-align: center; margin-bottom: 20px; }
+ .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; text-transform: uppercase; letter-spacing: -2px; margin-bottom: 16px; }
+ .hero p { font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto 24px; }
+ .btn-cta { display: inline-block; padding: 16px 48px; background: #c0392b; color: #f5f0ea; font-weight: 700; font-size: 1.1rem; text-decoration: none; border: none; text-transform: uppercase; letter-spacing: 2px; transition: background 0.2s; }
+ .btn-cta:hover { background: #a93226; }
+ .section-title { grid-column: 1 / -1; font-size: 2rem; font-weight: 700; letter-spacing: -1px; border-bottom: 4px solid #1a1a1a; padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
+ .card { background: #f5f0ea; border: 2px solid #1a1a1a; padding: 24px; grid-column: span 4; display: flex; flex-direction: column; }
+ .card h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
+ .card p { font-size: 0.95rem; color: #2c2c2c; }
+ .faq-item { grid-column: 1 / -1; padding: 20px 0; border-bottom: 1px solid #3a3a3a; }
+ .faq-item:last-child { border-bottom: none; }
+ .faq-question { font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; cursor: default; }
+ .faq-answer { font-size: 0.95rem; color: #2c2c2c; }
+ .footer { grid-column: 1 / -1; padding: 32px 24px; background: #1a1a1a; color: #f5f0ea; text-align: center; margin-top: 40px; font-size: 0.85rem; }
+ .footer a { color: #c0392b; text-decoration: none; }
+ .footer a:hover { text-decoration: underline; }
+ @media (max-width: 768px) {
+ .grid-container { padding: 12px; gap: 12px; }
+ .header { padding: 12px 16px; }
+ .nav-list { display: none; flex-direction: column; background: #f5f0ea; position: absolute; top: 68px; left: 0; width: 100%; padding: 16px; border-bottom: 4px solid #1a1a1a; }
+ .nav-list.active { display: flex; }
+ .hamburger { display: block; }
+ .hero h1 { font-size: 2rem; }
+ .card { grid-column: 1 / -1; }
+ .section-title { font-size: 1.6rem; }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <div class="grid-container">
-        <header class="header">
-            <div style="font-weight: 900; font-size: 1.4rem; letter-spacing: -1px;">화곡KARAOKE</div>
-            <button class="hamburger" aria-label="메뉴 열기" onclick="document.querySelector('.nav-list').classList.toggle('active')">☰</button>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info">정보</a></li>
-                    <li><a href="/system">시스템</a></li>
-                    <li><a href="/reservation">예약</a></li>
-                    <li><a href="/contact">연락처</a></li>
-                </ul>
-            </nav>
-        </header>
+ <div class="grid-container">
+ <header class="header">
+ <div style="font-weight: 900; font-size: 1.4rem; letter-spacing: -1px;">화곡KARAOKE</div>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="document.querySelector('.nav-list').classList.toggle('active')">☰</button>
+ <nav>
+ <ul class="nav-list">
+ <li><a href="/">홈</a></li>
+ <li><a href="/info">정보</a></li>
+ <li><a href="/system">시스템</a></li>
+ <li><a href="/reservation">예약</a></li>
+ <li><a href="/contact">연락처</a></li>
+ </ul>
+ </nav>
+ </header>
 
-        <section class="hero">
-            <h1>화곡동 No.1 프리미엄 가라오케</h1>
-            <p>24시간 운영 · 최신 음향 시스템 · 1,500+곡 라이브러리 · 전문 매니저 상시 대기<br>객관적 데이터로 검증된 최상의 노래방 환경.</p>
-            <a href="tel:010-6279-0862" class="btn-cta">전화 예약 010-6279-0862</a>
-        </section>
+ <section class="hero">
+ <h1>화곡동 No.1 프리미엄 가라오케</h1>
+ <p>24시간 운영 · 최신 음향 시스템 · 1,500+곡 라이브러리 · 전문 매니저 상시 대기<br>객관적 데이터로 검증된 최상의 노래방 환경.</p>
+ 
+ </section>
 
-        <h2 class="section-title">시스템 사양 · 데이터</h2>
+ <h2 class="section-title">시스템 사양 · 데이터</h2>
 
-        <div class="card">
-            <h3>⏱ 운영 시간</h3>
-            <p>24시간 연중무휴 운영. 새벽 시간(00:00~06:00)에도 매니저 2인 상시 배치. 긴급 콜 대응 15분 이내. 실제 평균 대기 시간: 4.2분 (2025년 1분기 기준).</p>
-        </div>
-        <div class="card">
-            <h3>🔊 음향 장비</h3>
-            <p>메인 스피커: JBL SRX800 시리즈 (2조) + 서브우퍼 2기. 마이크: Shure SM58 4채널. 딜레이 리버브: TC Helicon. 객실당 별도 EQ 튜닝 완료. 주파수 응답 35Hz~20kHz ±2dB.</p>
-        </div>
-        <div class="card">
-            <h3>📀 노래 라이브러리</h3>
-            <p>1,547곡 (2025년 4월 기준, 주간 업데이트). 장르별: 발라드 32% · 댄스 28% · 록 15% · 트로트 13% · 팝송 8% · 기타 4%. 신곡 반영 속도: 발매 후 평균 7.2시간.</p>
-        </div>
-        <div class="card">
-            <h3>👤 매니저 전문성</h3>
-            <p>전 매니저 서비스 교육 40시간 이상 이수. 마이크 테크닉 · 분위기 조성 · 비상 상황 대처 능력 보유. 고객 1인당 평균 응대 시간: 3.8분. 만족도 점수: 4.7/5.0 (N=2,180).</p>
-        </div>
-        <div class="card">
-            <h3>🧼 청결 관리</h3>
-            <p>매일 3회 살균 소독 (10:00 / 15:00 / 22:00). 객실 내 공기 청정기 2기 가동. 표면 균 측정 결과: 12 CFU/㎠ (업계 평균 48 CFU/㎠). 타일 바닥·가죽 소파·UV 램프 적용.</p>
-        </div>
-        <div class="card">
-            <h3>📍 위치 접근성</h3>
-            <p>화곡역 3번 출구 도보 4분. 건물 내 전용 주차장 12대 가능 (높이 2.1m 제한 없음). 주변 버스 정류장 3개소 도보 2분. 2024년 화곡동 상권 유동 인구: 일평균 28,000명.</p>
-        </div>
+ <div class="card">
+ <h3>⏱ 운영 시간</h3>
+ <p>24시간 연중무휴 운영. 새벽 시간(00:00~06:00)에도 매니저 2인 상시 배치. 긴급 콜 대응 15분 이내. 실제 평균 대기 시간: 4.2분 (2025년 1분기 기준).</p>
+ </div>
+ <div class="card">
+ <h3>🔊 음향 장비</h3>
+ <p>메인 스피커: JBL SRX800 시리즈 (2조) + 서브우퍼 2기. 마이크: Shure SM58 4채널. 딜레이 리버브: TC Helicon. 객실당 별도 EQ 튜닝 완료. 주파수 응답 35Hz~20kHz ±2dB.</p>
+ </div>
+ <div class="card">
+ <h3>📀 노래 라이브러리</h3>
+ <p>1,547곡 (2025년 4월 기준, 주간 업데이트). 장르별: 발라드 32% · 댄스 28% · 록 15% · 트로트 13% · 팝송 8% · 기타 4%. 신곡 반영 속도: 발매 후 평균 7.2시간.</p>
+ </div>
+ <div class="card">
+ <h3>👤 매니저 전문성</h3>
+ <p>전 매니저 서비스 교육 40시간 이상 이수. 마이크 테크닉 · 분위기 조성 · 비상 상황 대처 능력 보유. 고객 1인당 평균 응대 시간: 3.8분. 만족도 점수: 4.7/5.0 (N=2,180).</p>
+ </div>
+ <div class="card">
+ <h3>🧼 청결 관리</h3>
+ <p>매일 3회 살균 소독 (10:00 / 15:00 / 22:00). 객실 내 공기 청정기 2기 가동. 표면 균 측정 결과: 12 CFU/㎠ (업계 평균 48 CFU/㎠). 타일 바닥·가죽 소파·UV 램프 적용.</p>
+ </div>
+ <div class="card">
+ <h3>📍 위치 접근성</h3>
+ <p>화곡역 3번 출구 도보 4분. 건물 내 전용 주차장 12대 가능 (높이 2.1m 제한 없음). 주변 버스 정류장 3개소 도보 2분. 2024년 화곡동 상권 유동 인구: 일평균 28,000명.</p>
+ </div>
 
-        <h2 class="section-title">자주 묻는 질문</h2>
+ <h2 class="section-title">자주 묻는 질문</h2>
 
-        <div class="faq-item">
-            <div class="faq-question">Q. 예약 없이 방문해도 되나요?</div>
-            <div class="faq-answer">가능합니다. 단, 금·토요일 19~23시는 평균 82% 객실 점유율로 예약이 권장됩니다. 대기 시 라운지 음료 서비스가 제공되며, 최장 대기 시간은 22분입니다 (2025년 3월 통계).</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q. 시스템 이용에 추가 비용이 있나요?</div>
-            <div class="faq-answer">기본 요금에 무제한 곡 선택, 마이크 2채널, 음향 조절이 포함됩니다. 별도 음향 엔지니어 출장(유료) 옵션 외에 추가 비용은 없습니다. 주류·안주는 별도 메뉴판 기준.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q. 몇 명까지 이용할 수 있나요?</div>
-            <div class="faq-answer">객실 4종: 소형(2~4인) 2실, 중형(4~8인) 4실, 대형(8~12인) 3실, VIP(10~16인) 1실. 16인 초과 단체는 사전 협의 시 별도 공간 제공 가능.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q. 반주 음질이나 MR에 문제가 있으면 어떻게 하나요?</div>
-            <div class="faq-answer">실시간 SMS/카카오톡 신고 시 평균 3분 이내 엔지니어가 확인합니다. 오프라인 백업 시스템(2TB SSD)을 갖추고 있어 99.7% 가동률을 유지합니다. 문제 지속 시 무료 시간 연장.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q. 주차 공간이 협소하다는 이야기를 들었는데요?</div>
-            <div class="faq-answer">건물 전용 12대 + 인근 공영주차장 120대 (도보 5분, 1시간 무료 쿠폰 제공). 실제 주차 평균 소요 시간: 2.8분. 건물 입구 바로 앞 2대는 항상 예약 고객용으로 확보됩니다.</div>
-        </div>
+ <div class="faq-item">
+ <div class="faq-question">Q. 예약 없이 방문해도 되나요?</div>
+ <div class="faq-answer">가능합니다. 단, 금·토요일 19~23시는 평균 82% 객실 점유율로 예약이 권장됩니다. 대기 시 라운지 음료 서비스가 제공되며, 최장 대기 시간은 22분입니다 (2025년 3월 통계).</div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">Q. 시스템 이용에 추가 비용이 있나요?</div>
+ <div class="faq-answer">기본 요금에 무제한 곡 선택, 마이크 2채널, 음향 조절이 포함됩니다. 별도 음향 엔지니어 출장(유료) 옵션 외에 추가 비용은 없습니다. 주류·안주는 별도 메뉴판 기준.</div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">Q. 몇 명까지 이용할 수 있나요?</div>
+ <div class="faq-answer">객실 4종: 소형(2~4인) 2실, 중형(4~8인) 4실, 대형(8~12인) 3실, VIP(10~16인) 1실. 16인 초과 단체는 사전 협의 시 별도 공간 제공 가능.</div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">Q. 반주 음질이나 MR에 문제가 있으면 어떻게 하나요?</div>
+ <div class="faq-answer">실시간 SMS/카카오톡 신고 시 평균 3분 이내 엔지니어가 확인합니다. 오프라인 백업 시스템(2TB SSD)을 갖추고 있어 99.7% 가동률을 유지합니다. 문제 지속 시 무료 시간 연장.</div>
+ </div>
+ <div class="faq-item">
+ <div class="faq-question">Q. 주차 공간이 협소하다는 이야기를 들었는데요?</div>
+ <div class="faq-answer">건물 전용 12대 + 인근 공영주차장 120대 (도보 5분, 1시간 무료 쿠폰 제공). 실제 주차 평균 소요 시간: 2.8분. 건물 입구 바로 앞 2대는 항상 예약 고객용으로 확보됩니다.</div>
+ </div>
 
-        <footer class="footer">
-            <p>화곡 가라오케 예약 · 010-6279-0862<br>서울특별시 강서구 화곡동 (정확한 주소는 전화 예약 시 안내)<br>운영 시간: 24시간 · 연중무휴<br>© 2025 HwGok Karaoke. All rights reserved.<br><a href="tel:010-6279-0862">지금 전화 예약</a> · <a href="/reservation">온라인 예약</a></p>
-        </footer>
-    </div>
+ <footer class="footer">
+ <p>화곡 가라오케 예약<br>서울특별시 강서구 화곡동 (정확한 주소는 전화 예약 시 안내)<br>운영 시간: 24시간 · 연중무휴<br>© 2025 HwGok Karaoke. All rights reserved.<br><a href="/reservation">온라인 예약</a></p>
+ </footer>
+ </div>
 </body>
 </html>
